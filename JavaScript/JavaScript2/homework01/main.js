@@ -16,6 +16,7 @@ const addBook = () => {
     const li = document.createElement("li") //create <li>
     //console.log(index)
     li.setAttribute("id", index, "class", "item") // set id"indexnum" calss"item"
+    li.setAttribute("class", "item") // set id"indexnum" calss"item"
     ul.appendChild(li) // add <li> into <ul>
     li.innerHTML += item
   }
@@ -30,22 +31,66 @@ const objBooks = {
   sophies_world: {
     title: "Sophie's World",
     author: "Jostein Gaarder",
-    language: "En"
+    language: "En",
+    imageUrl: "https://s2.adlibris.com/images/3417528/sophies-world-a-novel-about-the-history-of-philosophy.jpg"
   },
   haxan: {
     title: "Häxan",
     author: "Camilla Läckberg",
-    language: "Sw"
+    language: "Sw",
+    imageUrl: "https://s2.adlibris.com/images/40675137/haxan.jpg"
   },
   Inferno: {
     title: "Inferno",
     author: "Daniel Browne, Dan Brown",
-    language: "Sw"
+    language: "Sw",
+    imageUrl: "https://s2.adlibris.com/images/11569373/inferno.jpg"
   },
   harry_potter: {
-    // title: "Harry Potter and the You’re A Wizard, Harry",
-    title: harryPotterBooks,
+    title: "Harry Potter and the You’re A Wizard, Harry",
     author: "J. K. Rowling",
-    language: "En"
+    language: "En",
+    imageUrl: "https://s2.adlibris.com/images/4953801/a-wizard-of-earthsea-1.jpg"
   }
 }
+
+//console.log("obj ", objBooks.harry_potter.title)
+
+const addImage = () => {
+  const image = document.createElement("img")
+  image.src = ""
+
+  document.getElementById("image").appendChild(image)
+}
+// addImage()
+
+const addObjBook = () => {
+  const objDiv = document.createElement("div")
+  const title = document.createElement("h2")
+  title.innerHTML = "This is Object section "
+
+  const image = document.createElement("img")
+  const ol = document.createElement("ol")
+
+  document.getElementById("root").appendChild(objDiv)
+  objDiv.setAttribute("id", "my-books")
+  document.getElementById("my-books").appendChild(title)
+  document.getElementById("my-books").appendChild(ol)
+
+  let index = 0
+
+  for (const [key, value] of Object.entries(objBooks)) {
+    document.getElementById("my-books").appendChild(image)
+    const li = document.createElement("li")
+
+    image.src = value.imageUrl
+    console.log(image.src)
+    li.setAttribute("id", index++)
+    li.setAttribute("class", "item")
+    ol.appendChild(li)
+
+    li.innerHTML += key + "<br> "
+    li.innerHTML += `Title: ${value.title} <br> Auther: ${value.author} <br> Language: ${value.language}`
+  }
+}
+addObjBook()
