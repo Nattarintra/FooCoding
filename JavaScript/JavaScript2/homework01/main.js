@@ -80,15 +80,14 @@ const addObjBook = () => {
   let index = 0
 
   for (const [key, value] of Object.entries(objBooks)) {
-    document.getElementById("my-books").appendChild(image)
     const li = document.createElement("li")
 
     image.src = value.imageUrl
-    console.log(image.src)
+    //console.log(image.src)
     li.setAttribute("id", index++)
     li.setAttribute("class", "item")
     ol.appendChild(li)
-
+    li.appendChild(image)
     li.innerHTML += key + "<br> "
     li.innerHTML += `Title: ${value.title} <br> Auther: ${value.author} <br> Language: ${value.language}`
   }
