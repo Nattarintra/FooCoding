@@ -25,7 +25,7 @@ const addBook = () => {
 }
 addBook()
 
-// 1.4 - Object
+// 1.4 -1.8 Object Loop append display book cover
 
 const objBooks = {
   sophies_world: {
@@ -60,28 +60,41 @@ const addObjBook = () => {
   const objDiv = document.createElement("div")
   const title = document.createElement("h2")
   title.innerHTML = "This is Object section "
-
-  const image = document.createElement("img")
-  const ol = document.createElement("ol")
+  const contentsDiv = document.createElement("div") // contents div
 
   document.getElementById("root").appendChild(objDiv)
   objDiv.setAttribute("id", "my-books")
   document.getElementById("my-books").appendChild(title)
-  document.getElementById("my-books").appendChild(ol)
-
+  const addContentsDiv = document.getElementById("my-books").appendChild(contentsDiv)
+  addContentsDiv.setAttribute("id", "my-books-card")
   let index = 0
 
   for (const [key, value] of Object.entries(objBooks)) {
-    const li = document.createElement("li")
+    const imageDiv = document.createElement("div")
+    const addImageDiv = document.getElementById("my-books-card").appendChild(imageDiv)
 
+    const image = document.createElement("img")
+    addImageDiv.setAttribute("id", "books-img-cover" + index++)
+
+    const textDiv = document.createElement("div")
+    const addTextDiv = document.getElementById("my-books-card").appendChild(textDiv)
+    addTextDiv.setAttribute("id", "books-card-body" + index++)
+    const pkey = document.createElement("h3")
+    const title = document.createElement("h4")
+    const text = document.createElement("p")
+
+    // loop image into my-books-img-cover
     image.src = value.imageUrl
     //console.log(image.src)
-    li.setAttribute("id", index++)
-    li.setAttribute("class", "item")
-    ol.appendChild(li)
-    li.appendChild(image)
-    li.innerHTML += key + "<br> "
-    li.innerHTML += `Title: ${value.title} <br> Auther: ${value.author} <br> Language: ${value.language}`
+    addImageDiv.appendChild(image)
+
+    pkey.innerHTML += key
+    addTextDiv.appendChild(pkey)
+    title.innerHTML += `Title: ${value.title}`
+    addTextDiv.appendChild(title)
+    text.innerHTML += ` Auther: ${value.author} <br> <span> Language: ${value.language} </span>`
+
+    addTextDiv.appendChild(text)
   }
 }
 addObjBook()
