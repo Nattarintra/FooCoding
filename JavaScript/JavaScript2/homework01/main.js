@@ -56,14 +56,6 @@ const objBooks = {
 
 //console.log("obj ", objBooks.harry_potter.title)
 
-const addImage = () => {
-  const image = document.createElement("img")
-  image.src = ""
-
-  document.getElementById("image").appendChild(image)
-}
-// addImage()
-
 const addObjBook = () => {
   const objDiv = document.createElement("div")
   const title = document.createElement("h2")
