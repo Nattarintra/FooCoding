@@ -2,3 +2,21 @@ body {
   background-color: darkslategray;
   color: #fff;
 }
+h2 {
+  text-align: center;
+}
+div#my-books-card {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-cover {
+  width: 50%;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+}
+.book-body {
+  width: 50%;
+  padding: 5rem 0;
+}

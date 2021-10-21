@@ -67,6 +67,7 @@ const addObjBook = () => {
   document.getElementById("my-books").appendChild(title)
   const addContentsDiv = document.getElementById("my-books").appendChild(contentsDiv)
   addContentsDiv.setAttribute("id", "my-books-card")
+  addContentsDiv.setAttribute("class", "my-books-card")
   let index = 0
 
   for (const [key, value] of Object.entries(objBooks)) {
@@ -75,10 +76,12 @@ const addObjBook = () => {
 
     const image = document.createElement("img")
     addImageDiv.setAttribute("id", "books-img-cover" + index++)
+    addImageDiv.setAttribute("class", "book-cover")
 
     const textDiv = document.createElement("div")
     const addTextDiv = document.getElementById("my-books-card").appendChild(textDiv)
     addTextDiv.setAttribute("id", "books-card-body" + index++)
+    addTextDiv.setAttribute("class", "book-body")
     const pkey = document.createElement("h3")
     const title = document.createElement("h4")
     const text = document.createElement("p")
