@@ -1,0 +1,22 @@
+body {
+  background-color: darkslategray;
+  color: #fff;
+}
+h1 {
+  text-align: center;
+}
+.content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.book-card {
+  margin: 2rem;
+  padding: 1rem 0;
+  width: 40%;
+  border: 1px solid;
+  text-align: center;
+}
+.book-cover {
+  margin-top: 1rem;
+}

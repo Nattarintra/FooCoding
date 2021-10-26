@@ -23,7 +23,7 @@ const addBook = () => {
   // loop
   harryPotterBooks.forEach(renderBooksList)
 }
-addBook()
+//addBook()
 
 // 1.4 -1.8 Object Loop append display book cover
 
