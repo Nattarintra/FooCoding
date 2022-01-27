@@ -1,0 +1,17 @@
+{
+  "name": "homework02",
+  "version": "1.0.0",
+  "description": "Database Mysql query.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index"
+  },
+  "author": "Nattarintra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.15"
+  }
+}
